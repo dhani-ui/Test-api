@@ -58,7 +58,7 @@ Enpoint - POST /tasks
 ```
 TOKEN=$(curl -s -X POST http://localhost:8080/login \
 -H "Content-Type: application/json" \
--d '{"username": "admin", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
+-d '{"username": "juragan", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
 
 curl -X POST http://localhost:8080/tasks \
 -H "Authorization: Bearer $TOKEN" \
