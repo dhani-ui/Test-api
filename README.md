@@ -56,20 +56,18 @@ cat app.log
 
 Enpoint - POST /tasks
 ```
-
 TOKEN=$(curl -s -X POST http://localhost:8080/login \
 -H "Content-Type: application/json" \
--d '{"username": "juragan", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
+-d '{"username": "admin", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
 
 curl -X POST http://localhost:8080/tasks \
 -H "Authorization: Bearer $TOKEN" \
 -H "Content-Type: application/json" \
--d '
-{
+-d '{
    "title": "Task Title",
    "description": "Task Description",
-   "status": "pending|completed",
-   "due_date": "YYYY-MM-DD"
+   "status": "pending",
+   "due_date": "2026-04-20"
 }'
 ```
 
