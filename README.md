@@ -44,7 +44,7 @@ membuat akun user biasa
 
 curl -X POST http://localhost:8080/register \
 -H "Content-Type: application/json" \
--d '{"username": "budi", "budiaja": "password123", "role": "user"}'
+-d '{"username": "budi", "password": "budiaja", "role": "user"}'
 ```
 
 Cek Log File
