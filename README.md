@@ -1,4 +1,4 @@
-8Persiapan dan Instalasi
+Persiapan dan Instalasi
 
 ### 1. Setup Database
 Buat database baru di PostgreSQL Anda dengan nama `apitest`.
