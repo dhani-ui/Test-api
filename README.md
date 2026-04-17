@@ -3,7 +3,14 @@ Persiapan dan Instalasi
 ### 1. Setup Database
 Buat database baru di PostgreSQL Anda dengan nama `apitest`.
 ```sql
+-- Ganti password user postgres (jika belum diset menjadi 'postgres')
+ALTER USER postgres WITH PASSWORD 'postgres';
+
+-- Buat database
 CREATE DATABASE apitest;
+
+-- Keluar dari psql
+\q
 
 ```
 Unduh Dependensi
