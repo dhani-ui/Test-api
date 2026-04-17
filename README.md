@@ -33,8 +33,14 @@ curl -X POST http://localhost:8080/register \
 -H "Content-Type: application/json" \
 -d '{"username": "juragan", "password": "123", "role": "admin"}'
 ```
+membuat akun user biasa
+```
 
+curl -X POST http://localhost:8080/register \
+-H "Content-Type: application/json" \
+-d '{"username": "staf_biasa", "password": "password123", "role": "user"}'
 
+```
 
 
 
