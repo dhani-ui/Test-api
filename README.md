@@ -1,4 +1,4 @@
-Persiapan dan Instalasi
+8Persiapan dan Instalasi
 
 ### 1. Setup Database
 Buat database baru di PostgreSQL Anda dengan nama `apitest`.
@@ -26,5 +26,19 @@ Jalankan perintah berikut:
 ```bash
 go test -v ./...
 ```
+
+membuat akun admin
+```
+curl -X POST http://localhost:8080/register \
+-H "Content-Type: application/json" \
+-d '{"username": "juragan", "password": "123", "role": "admin"}'
+```
+
+
+
+
+
+
+
 
 
