@@ -79,8 +79,8 @@ curl -X POST http://localhost:8080/tasks \
    "due_date": "2026-04-20"
 }'
 ```
-```
 endpoint GET /tasks
+```
 # 1. Ambil Token terbaru
 TOKEN=$(curl -s -X POST http://localhost:8080/login \
 -H "Content-Type: application/json" \
@@ -91,6 +91,49 @@ curl -X GET http://localhost:8080/tasks \
 -H "Authorization: Bearer $TOKEN"
 
 ```
+endpoint GET/task/:id 
+```
+# 1. Ambil Token terbaru
+TOKEN=$(curl -s -X POST http://localhost:8080/login \
+-H "Content-Type: application/json" \
+-d '{"username": "juragan", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
+
+# 2. Ambil detail tugas dengan ID 1
+curl -X GET http://localhost:8080/tasks/1 \
+-H "Authorization: Bearer $TOKEN"
+```
+endpoint PUT /tasks/:id 
+```
+# 1. Ambil Token terbaru
+TOKEN=$(curl -s -X POST http://localhost:8080/login \
+-H "Content-Type: application/json" \
+-d '{"username": "juragan", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
+
+# 2. Update tugas ID 1 dengan data VALID
+curl -X PUT http://localhost:8080/tasks/1 \
+-H "Authorization: Bearer $TOKEN" \
+-H "Content-Type: application/json" \
+-d '{
+   "title": "Update Projek Backend",
+   "description": "Fitur CRUD sudah hampir selesai",
+   "status": "completed",
+   "due_date": "2026-04-20"
+}'
+```
+endpoint DELETE/task/:id 
+```
+# 1. Ambil Token terbaru (Login sebagai Admin)
+TOKEN=$(curl -s -X POST http://localhost:8080/login \
+-H "Content-Type: application/json" \
+-d '{"username": "juragan", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
+
+# 2. Hapus tugas dengan ID 1
+curl -X DELETE http://localhost:8080/tasks/1 \
+-H "Authorization: Bearer $TOKEN"
+```
+
+
+
 
 
 
