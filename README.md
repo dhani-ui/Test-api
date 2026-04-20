@@ -1,5 +1,10 @@
 Persiapan dan Instalasi
 
+clone test api
+```
+git clone https://github.com/dhani-ui/Test-api.git
+```
+
 ### 1. Setup Database
 Buat database baru di PostgreSQL Anda dengan nama `apitest`.
 ```sql
