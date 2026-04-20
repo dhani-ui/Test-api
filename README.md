@@ -79,9 +79,18 @@ curl -X POST http://localhost:8080/tasks \
    "due_date": "2026-04-20"
 }'
 ```
+```
+endpoint GET /tasks
+# 1. Ambil Token terbaru
+TOKEN=$(curl -s -X POST http://localhost:8080/login \
+-H "Content-Type: application/json" \
+-d '{"username": "juragan", "password": "123"}' | grep -o '"token":"[^"]*' | grep -o '[^"]*$')
 
+# 2. Panggil endpoint GET
+curl -X GET http://localhost:8080/tasks \
+-H "Authorization: Bearer $TOKEN"
 
-
+```
 
 
 
