@@ -18,6 +18,10 @@ Unduh Dependensi
 ```bash
 go mod tidy
 ```
+Jalankan Redis
+```
+redis-server
+```
 Cara Menjalankan Aplikasi
 Pastikan server PostgreSQL dan Redis sudah berjalan.
 Jalankan perintah berikut di terminal:
