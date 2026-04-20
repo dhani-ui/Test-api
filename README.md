@@ -21,6 +21,8 @@ Unduh Dependensi
 ​Buka terminal di dalam folder proyek, lalu jalankan:
 
 ```bash
+cd
+cd Test-api
 go mod tidy
 ```
 Jalankan Redis
